@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jui-Yun Hsieh 謝芮云 | Ph.D. Student, National Central University</title>
+<meta name="description" content="Jui-Yun Hsieh (謝芮云), Ph.D. student at the Department of Civil Engineering, National Central University, Taiwan. Research: hydrological big data, AI-based disaster early warning, extreme event analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14212b; --muted:#5a6b78; --line:#dde5ea; --bg:#f7fafb; --card:#ffffff;
+    --accent:#0e6b8c; --accent-soft:#e3f1f6; --hl:#0b4f68;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Inter","Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+       color:var(--ink);background:var(--bg);line-height:1.65;font-size:16px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* language switching */
+  body.lang-en [lang="zh-Hant"]{display:none!important}
+  body.lang-zh [lang="en"]{display:none!important}
+
+  header.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:12px 24px}
+  .brand{font-weight:700;color:var(--ink);white-space:nowrap}
+  .nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex:1;overflow-x:auto}
+  .nav ul a{color:var(--muted);font-size:14px;font-weight:500;white-space:nowrap}
+  .nav ul a:hover{color:var(--accent);text-decoration:none}
+  .lang-btn{margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 14px;font:inherit;font-size:13px;cursor:pointer;color:var(--ink);white-space:nowrap}
+  .lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  .hero{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center;padding:56px 0 40px}
+  .avatar{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,#0e6b8c,#56a8c4);
+          display:flex;align-items:center;justify-content:center;color:#fff;font-size:72px;font-weight:700;overflow:hidden}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .hero h1{margin:0;font-size:38px;line-height:1.2}
+  .hero h1 small{display:block;font-size:20px;font-weight:500;color:var(--muted);margin-top:6px}
+  .role{margin:14px 0 4px;font-weight:600;color:var(--hl)}
+  .affil{color:var(--muted);margin:0}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 20px}
+  .tag{background:var(--accent-soft);color:var(--hl);padding:4px 12px;border-radius:999px;font-size:14px;font-weight:500}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 14px;font-size:14px;color:var(--ink)}
+  .btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+  section{padding:36px 0;border-top:1px solid var(--line)}
+  section h2{font-size:24px;margin:0 0 20px;display:flex;align-items:baseline;gap:12px}
+  section h2 .sub{font-size:14px;color:var(--muted);font-weight:500}
+
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .card h3{margin:0 0 4px;font-size:16px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+
+  .timeline{list-style:none;margin:0;padding:0}
+  .timeline li{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line)}
+  .timeline li:last-child{border-bottom:none}
+  .when{color:var(--accent);font-weight:600;font-size:14px}
+  .timeline b{display:block}
+  .timeline span{color:var(--muted);font-size:14px}
+
+  h3.group{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:28px 0 10px}
+  h3.group:first-of-type{margin-top:0}
+  ol.pubs{margin:0;padding-left:22px}
+  ol.pubs li{margin-bottom:14px;padding-left:4px}
+  .me{font-weight:700;color:var(--ink)}
+  .venue{font-style:italic}
+  .badge{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:4px;margin-left:6px;vertical-align:1px}
+  .b-pub{background:#e3f4ea;color:#1d6b3c}
+  .b-rev{background:#fff4dc;color:#8a5a00}
+  .b-conf{background:var(--accent-soft);color:var(--hl)}
+  .b-award{background:#fde8e8;color:#9b2c2c}
+
+  .proj{list-style:none;padding:0;margin:0}
+  .proj li{padding:12px 0;border-bottom:1px dashed var(--line)}
+  .proj li:last-child{border-bottom:none}
+  .proj .meta{color:var(--muted);font-size:13px}
+
+  ul.plain{margin:0;padding-left:20px}
+  ul.plain li{margin-bottom:8px}
+
+  .contact{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .contact .card p{color:var(--ink);font-size:15px}
+  .contact .label{color:var(--muted);font-size:13px;margin-bottom:4px}
+
+  footer{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+
+  @media (max-width:760px){
+    .hero{grid-template-columns:1fr;text-align:center;padding-top:36px}
+    .avatar{width:150px;height:150px;font-size:52px;margin:0 auto}
+    .tags,.links{justify-content:center}
+    .grid2,.contact{grid-template-columns:1fr}
+    .timeline li{grid-template-columns:1fr;gap:2px}
+    .nav ul{display:none}
+  }
+</style>
+</head>
+<body class="lang-en">
+
+<header class="top">
+  <nav class="nav">
+    <span class="brand"><span lang="en">Jui-Yun Hsieh</span><span lang="zh-Hant">謝芮云</span></span>
+    <ul>
+      <li><a href="#research"><span lang="en">Research</span><span lang="zh-Hant">研究領域</span></a></li>
+      <li><a href="#education"><span lang="en">Education</span><span lang="zh-Hant">學歷</span></a></li>
+      <li><a href="#publications"><span lang="en">Publications</span><span lang="zh-Hant">著作</span></a></li>
+      <li><a href="#projects"><span lang="en">Projects</span><span lang="zh-Hant">計畫</span></a></li>
+      <li><a href="#honors"><span lang="en">Honors</span><span lang="zh-Hant">榮譽</span></a></li>
+      <li><a href="#contact"><span lang="en">Contact</span><span lang="zh-Hant">聯絡</span></a></li>
+    </ul>
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">中文</button>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <!-- 放照片：把照片命名為 photo.jpg 放在同一資料夾，然後把下一行的 <span>謝</span> 換成 <img src="photo.jpg" alt="Jui-Yun Hsieh"> -->
+    <div class="avatar"><span>謝</span></div>
+    <div>
+      <h1>
+        <span lang="en">Jui-Yun Hsieh<small>謝芮云</small></span>
+        <span lang="zh-Hant">謝芮云<small>Jui-Yun Hsieh</small></span>
+      </h1>
+      <p class="role"><span lang="en">Ph.D. Student</span><span lang="zh-Hant">博士生</span></p>
+      <p class="affil" lang="en">Hydrology and Environmental Informatics Laboratory<br>Division of Disaster Prevention and Information Applications<br>Department of Civil Engineering, National Central University, Taiwan</p>
+      <p class="affil" lang="zh-Hant">國立中央大學 土木工程學系 防災與資訊應用組<br>水文與環境資訊研究室</p>
+      <div class="tags">
+        <span class="tag"><span lang="en">Hydrological Big Data</span><span lang="zh-Hant">水文大數據</span></span>
+        <span class="tag"><span lang="en">AI-based Disaster Early Warning</span><span lang="zh-Hant">AI 災害預警</span></span>
+        <span class="tag"><span lang="en">Extreme Event Analysis</span><span lang="zh-Hant">極端事件分析</span></span>
+      </div>
+      <div class="links">
+        <a class="btn" href="mailto:114382002@cc.ncu.edu.tw">✉ Email</a>
+        <!-- 有了之後把 href="#" 換成你的連結，沒有的話可整行刪除 -->
+        <a class="btn" href="#">Google Scholar</a>
+        <a class="btn" href="#">ORCID</a>
+        <a class="btn" href="#">CV (PDF)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2><span lang="en">About</span><span lang="zh-Hant">關於我</span></h2>
+    <p lang="en">I am a Ph.D. student in the Department of Civil Engineering at National Central University (NCU), Taiwan, where I also completed my B.S. and M.S. degrees. My research integrates multi-source spatiotemporal hydrological and environmental data with machine learning and deep learning to understand how extreme hazards evolve and to build intelligent early warning systems. My work covers typhoon-induced landslides, typhoon-induced agricultural loss, groundwater prediction, drought risk, and the links between thermal anomalies and shallow seismicity in Taiwan.</p>
+    <p lang="zh-Hant">我目前就讀國立中央大學土木工程學系博士班（防災與資訊應用組），學士與碩士亦畢業於中央大學土木系。研究聚焦於整合多元時空水文與環境大數據，結合機器學習與深度學習方法，探討極端災害的演化機制並建構智慧預警系統。研究主題涵蓋颱風引致崩塌、颱風農業損失評估、地下水位預測、乾旱風險，以及台灣熱異常與淺層地震活動之關聯。</p>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <h2><span lang="en">Research Interests</span><span lang="zh-Hant">研究領域</span></h2>
+    <div class="grid2">
+      <div class="card">
+        <h3><span lang="en">Spatiotemporal Big Data &amp; AI</span><span lang="zh-Hant">水文環境多元時空大數據與 AI 分析</span></h3>
+        <p lang="en">Integrating multi-source spatiotemporal hydrological and environmental data with AI analytics.</p>
+        <p lang="zh-Hant">整合水文環境多元時空大數據，發展 AI 分析與應用。</p>
+      </div>
+      <div class="card">
+        <h3><span lang="en">Extreme Hazards &amp; Early Warning</span><span lang="zh-Hant">極端災害演化機制與智慧預警</span></h3>
+        <p lang="en">Understanding how extreme hazards evolve and building intelligent early warning systems.</p>
+        <p lang="zh-Hant">探討極端災害演化機制，建構智慧預警系統。</p>
+      </div>
+      <div class="card">
+        <h3><span lang="en">Smart Water Management &amp; Resilience</span><span lang="zh-Hant">智慧化水資源管理與災害韌性</span></h3>
+        <p lang="en">Smart water resources management and disaster resilience.</p>
+        <p lang="zh-Hant">智慧化水資源管理與災害韌性研究。</p>
+      </div>
+      <div class="card">
+        <h3><span lang="en">Agricultural Water Environment &amp; Risk</span><span lang="zh-Hant">農田水利環境監測與致災風險</span></h3>
+        <p lang="en">Monitoring agricultural water environments and assessing hazard risk.</p>
+        <p lang="zh-Hant">農田水利環境監測與致災風險評估。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2><span lang="en">Education</span><span lang="zh-Hant">學歷</span></h2>
+    <ul class="timeline">
+      <li>
+        <div class="when"><span lang="en">Present</span><span lang="zh-Hant">就讀中</span></div>
+        <div>
+          <b><span lang="en">Ph.D., Civil Engineering</span><span lang="zh-Hant">博士班，土木工程學系</span></b>
+          <span lang="en">National Central University · Division of Disaster Prevention and Information Applications</span>
+          <span lang="zh-Hant">國立中央大學 · 防災與資訊應用組</span>
+        </div>
+      </li>
+      <li>
+        <div class="when">2024</div>
+        <div>
+          <b><span lang="en">M.S., Civil Engineering</span><span lang="zh-Hant">碩士，土木工程學系</span></b>
+          <span lang="en">National Central University · Thesis: Investigating strong wind as a landslide-triggering factor and developing a machine learning landslide model</span>
+          <span lang="zh-Hant">國立中央大學 · 碩士論文：探討強風是否為崩塌致災因子與建立崩塌機器學習模型</span>
+        </div>
+      </li>
+      <li>
+        <div class="when"><span lang="en">B.S.</span><span lang="zh-Hant">學士</span></div>
+        <div>
+          <b><span lang="en">B.S., Civil Engineering</span><span lang="zh-Hant">學士，土木工程學系</span></b>
+          <span lang="en">National Central University</span>
+          <span lang="zh-Hant">國立中央大學</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2><span lang="en">Publications</span><span lang="zh-Hant">學術著作</span></h2>
+
+    <h3 class="group"><span lang="en">Journal Papers</span><span lang="zh-Hant">期刊論文</span></h3>
+    <ol class="pubs">
+      <li>Yuan-Chien Lin*, <span class="me">Jui-Yun Hsieh</span>, Hua-San Shih &amp; Wen-Hsin Wang (2025). Strong wind is one of the important factors that trigger landslides. <span class="venue">npj Natural Hazards</span>, 2(1), 12. <span class="badge b-pub">SCI</span></li>
+      <li>Huan-Sheng Lin, <span class="me">Jui-Yun Hsieh</span>, Hsin-Wen Pai &amp; Yuan-Chien Lin* (2025). Identifying confined aquifers using EOF data-driven approach and MODFLOW simulation. <span class="venue">Results in Engineering</span>, 28. <span class="badge b-pub">SCI, Q1</span></li>
+      <li>Tsai-Ning Weng, Ray-Shyan Wu, Tzu-Han Weng, Yi-Ho Chen, Tsai-Chun Lai, <span class="me">Jui-Yun Hsieh</span>, Chu-Chun Hsu &amp; Yuan-Chien Lin* (2025). Groundwater level prediction by wavelet deep learning with smart pumping data. <span class="venue">Water Resources Management</span>, 1–26. <span class="badge b-pub">SCI, Q1</span></li>
+      <li><span class="me">Jui-Yun Hsieh</span>, Hua-San Shih &amp; Yuan-Chien Lin*. Multi-stage triggering of shallow seismicity by thermal anomalies in Taiwan. <span class="badge b-rev">Submitted</span></li>
+      <li>Cai-Chun Lai, <span class="me">Jui-Yun Hsieh</span> &amp; Yuan-Chien Lin*. Investigating conjunctive management strategies of surface water and groundwater by system dynamics and Bayesian networks. <span class="badge b-rev">Under review</span></li>
+      <li>Hsin-Wen Pai, <span class="me">Jui-Yun Hsieh</span>, Boris Po-Tsang Chen, Pei-Yuan Chen, Hsiao-Chi Chuang, Fang-Yi Cheng, Ray-Shyan Wu, Cai-Rou Chen, Siti Talitha Rachma &amp; Yuan-Chien Lin*. Developing a new wavelet-based spatiotemporal drought index and risk under climate change. <span class="badge b-rev">Submitted</span></li>
+    </ol>
+
+    <h3 class="group"><span lang="en">Conference Papers</span><span lang="zh-Hant">研討會論文</span></h3>
+    <ol class="pubs">
+      <li><span class="me">Jui-Yun Hsieh*</span> &amp; Yuan-Chien Lin (2026). An integrated framework for real-time assessment of typhoon-induced agricultural loss across multiple crops. <span class="venue">26th ICID Congress</span>, France. <span class="badge b-conf"><span lang="en">Expected</span><span lang="zh-Hant">預計發表</span></span></li>
+      <li><span class="me">Jui-Yun Hsieh*</span> &amp; Yuan-Chien Lin (2024). Combined effect of wind and rain on typhoon-induced landslide. <span class="venue">EGU General Assembly 2024</span>, Vienna, Austria.</li>
+      <li><span class="me">Jui-Yun Hsieh*</span> &amp; Yuan-Chien Lin (2023). Investigation of the landslide of the combination of wind and rain during typhoon by random forest. <span class="venue">International Conference on Civil and Environmental Engineering (ICCEE)</span>, Vietnam. <span class="badge b-award"><span lang="en">Best Paper Award</span><span lang="zh-Hant">最佳論文獎</span></span></li>
+    </ol>
+
+    <h3 class="group"><span lang="en">Thesis</span><span lang="zh-Hant">學位論文</span></h3>
+    <ol class="pubs">
+      <li><span class="me">謝芮云</span> (2024)。探討強風是否為崩塌致災因子與建立崩塌機器學習模型。國立中央大學土木工程學系碩士論文。</li>
+    </ol>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2><span lang="en">Research Projects</span><span lang="zh-Hant">計畫參與</span></h2>
+
+    <h3 class="group"><span lang="en">National Science and Technology Council (NSTC)</span><span lang="zh-Hant">國科會專題研究計畫</span></h3>
+    <ul class="proj">
+      <li>
+        <span lang="en">Water-level image recognition for flood-prone areas and smart community-based floodgate operation (1/3)</span>
+        <span lang="zh-Hant">發展易淹水地區水位影像辨識技術與結合民間社區防汛智慧化水門啟閉操作機制 (1/3)</span>
+        <div class="meta">114-2622-E-008-023</div>
+      </li>
+      <li>
+        <span lang="en">Exploration of submarine groundwater discharge potential around Taiwan and Penghu for sustainable multi-source water allocation</span>
+        <span lang="zh-Hant">台灣本島及澎湖離島海底地下水滲流潛能探勘調查與多元永續水資源調配利用</span>
+        <div class="meta">113-2621-M-008-008-MY3</div>
+      </li>
+      <li>
+        <span lang="en">Integrating FORMOSAT data into value-added environmental health exposure products for Taiwan (2/3)</span>
+        <span lang="zh-Hant">整合福衛衛星資料在台灣環境健康暴露度加值產品之建構 (2/3)</span>
+        <div class="meta">112-2119-M-008-010</div>
+      </li>
+      <li>
+        <span lang="en">Value-added applications of FORMOSAT-7 and TRITON GNSS data (2/3)</span>
+        <span lang="zh-Hant">福衛7與獵風者GNSS資料加值與應用 (2/3)</span>
+        <div class="meta">112-2119-M-008-008</div>
+      </li>
+      <li>
+        <span lang="en">Automated typhoon-induced landslide identification and landslide factor analysis using multispectral satellite imagery and machine learning (4/5, 5/5)</span>
+        <span lang="zh-Hant">結合多光譜衛星影像與機器學習方法建立颱風事件崩塌地自動化辨識系統與崩塌因子分析 (4/5、5/5)</span>
+        <div class="meta">111-2636-E-008-014 · 112-2636-E-008-005</div>
+      </li>
+    </ul>
+
+    <h3 class="group"><span lang="en">Other Funded Projects</span><span lang="zh-Hant">其他委託計畫</span></h3>
+    <ul class="proj">
+      <li>
+        <span lang="en">Improved assessment of island-wide dynamic shallow groundwater levels for soil liquefaction (1/3, 2/3)</span>
+        <span lang="zh-Hant">全臺土壤液化淺層地下水位動態模式精進評估 (1/3、2/3)</span>
+        <div class="meta"><span lang="en">Geological Survey and Mining Management Agency, Ministry of Economic Affairs · 2025–2026</span><span lang="zh-Hant">經濟部地質調查及礦業管理中心 · 2025–2026</span></div>
+      </li>
+      <li>
+        <span lang="en">Assessing air pollution impacts of power plants using satellite remote sensing and Geo-AI</span>
+        <span lang="zh-Hant">衛星遙測結合 Geo-AI 之電廠空污影響評估</span>
+        <div class="meta"><span lang="en">Taiwan Power Company · 2025–2026</span><span lang="zh-Hant">台灣電力公司 · 2025–2026</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- HONORS -->
+  <section id="honors">
+    <h2><span lang="en">Honors &amp; Awards</span><span lang="zh-Hant">榮譽與獎項</span></h2>
+    <ul class="plain" lang="en">
+      <li>Best Paper Award, International Conference on Civil and Environmental Engineering (ICCEE)</li>
+      <li>Best Presentation Award, Scientific English Presentation and Poster Competition</li>
+      <li>Outstanding Student Award, National Central University (academic years 2020–21, 2022–23, 2023–24)</li>
+      <li>Academic Excellence Award (twice) and Outstanding Student Scholarship (twice)</li>
+      <li>Ranked 1st in the department (average score 93.16)</li>
+      <li>Graduation speaker; summer internship lecturer</li>
+    </ul>
+    <ul class="plain" lang="zh-Hant">
+      <li>International Conference on Civil and Environmental Engineering (ICCEE) 最佳論文獎</li>
+      <li>科技英語簡報與壁報競賽 最佳台風獎</li>
+      <li>校級優秀學生獎（109、111、112 學年度）</li>
+      <li>兩度獲得書卷獎、兩度獲優秀學生獎學金</li>
+      <li>平均成績 93.16 分，系排名第一</li>
+      <li>畢業生致詞代表、暑期實習講員</li>
+    </ul>
+  </section>
+
+  <!-- EXCHANGE -->
+  <section id="exchange">
+    <h2><span lang="en">International Exchange</span><span lang="zh-Hant">國際交流</span></h2>
+    <ul class="plain" lang="en">
+      <li>Exchange program, Can Tho University, Vietnam</li>
+      <li>SAKURA Science Exchange Program, The University of Tokyo, Japan</li>
+      <li>Civil and Environmental Engineering Exchange, Tokyo Institute of Technology and National Central University</li>
+    </ul>
+    <ul class="plain" lang="zh-Hant">
+      <li>越南芹苴大學（Can Tho University）交換學生計畫</li>
+      <li>日本東京大學 SAKURA SCIENCE 交換學生計畫</li>
+      <li>日本東京工業大學與國立中央大學土木與環境工程交流會</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2><span lang="en">Contact</span><span lang="zh-Hant">聯絡方式</span></h2>
+    <div class="contact">
+      <div class="card">
+        <div class="label">Email</div>
+        <p><a href="mailto:114382002@cc.ncu.edu.tw">114382002@cc.ncu.edu.tw</a></p>
+      </div>
+      <div class="card">
+        <div class="label"><span lang="en">Address</span><span lang="zh-Hant">地址</span></div>
+        <p lang="en">Engineering Building I, No. 300, Zhongda Rd., Zhongli Dist., Taoyuan City 320317, Taiwan (R.O.C.)</p>
+        <p lang="zh-Hant">320317 桃園市中壢區中大路300號 工程一館</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="yr">2026</span> Jui-Yun Hsieh 謝芮云 ·
+  <span lang="en">Last updated: November 2026</span><span lang="zh-Hant">最後更新：2026 年 11 月</span>
+</footer>
+
+<script>
+  (function(){
+    var body = document.body, btn = document.getElementById('langBtn');
+    function set(l){
+      body.classList.toggle('lang-en', l === 'en');
+      body.classList.toggle('lang-zh', l === 'zh');
+      document.documentElement.lang = l === 'zh' ? 'zh-Hant' : 'en';
+      btn.textContent = l === 'zh' ? 'English' : '中文';
+      try { localStorage.setItem('lang', l); } catch(e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch(e) {}
+    set(saved === 'zh' ? 'zh' : 'en');
+    btn.addEventListener('click', function(){ set(body.classList.contains('lang-en') ? 'zh' : 'en'); });
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
